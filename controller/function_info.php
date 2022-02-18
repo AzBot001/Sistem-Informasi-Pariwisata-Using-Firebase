@@ -21,7 +21,7 @@ function tampil_informasi($database)
             </td>
         </tr>
         <div class="modal fade" data-backdrop="static" id="modal-edit<?= $key ?>">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title"><i class="fas fa-edit"></i> Edit Informasi</h4>

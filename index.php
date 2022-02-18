@@ -25,6 +25,10 @@ if(empty($_GET['hal'])){
         $title = 'Ulasan';
         $icon = 'fas';
         include 'pages/ulasan.php';
+    }else if(isset($_GET['hal']) && $_GET['hal'] == 'map'){
+        $title = 'Map';
+        $icon = 'fas';
+        include 'pages/map.php';
     }
 
     include 'layout/footer.php';

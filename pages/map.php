@@ -1,5 +1,5 @@
 <?php
-include 'controller/post_info.php';
+include 'controller/post_map.php';
 ?>
 <div class="content-wrapper">
     <section class="content-header">
@@ -23,39 +23,15 @@ include 'controller/post_info.php';
             <div class="card card-default color-palette-box">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Daftar Informasi
+                        Daftar Fasilitas
                     </h3>
                 </div>
                 <div class="card-body">
                 <?php
-                    if (isset($_SESSION['msg_simpan_info'])) {
+                    if (isset($_SESSION['msg_simpan_map'])) {
                     ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_simpan_info'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <?php
-                    if (isset($_SESSION['msg_edit_info'])) {
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_edit_info'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <?php
-                    if (isset($_SESSION['msg_hapus_info'])) {
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_hapus_info'); ?>
+                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_simpan_map'); ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -64,19 +40,21 @@ include 'controller/post_info.php';
                     }
                     ?>
                     <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-xl">
-                        <i class="fas fa-plus-circle"></i> Tambah Informasi
+                        <i class="fas fa-plus-circle"></i> Tambah Fasilitas
                     </button><br><br>
                     <table class="table" id="dataTable">
                         <thead class="thead-light">
                             <tr>
                                 <th>#</th>
-                                <th>Judul Informasi</th>
-                                <th>Tanggal</th>
+                                <th>Fasilitas</th>
+                                <th>Long / Lat</th>
+                                <th>Tiket Masuk</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php tampil_informasi($database); ?>
+                            <?php  ?>
                         </tbody>
                     </table>
 
@@ -92,7 +70,7 @@ include 'controller/post_info.php';
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title"><i class="fas fa-plus-circle"></i> Input Informasi</h4>
+                    <h4 class="modal-title"><i class="fas fa-plus-circle"></i> Input Fasilitas</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -102,22 +80,46 @@ include 'controller/post_info.php';
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input required type="text" name="judul" class="form-control text-center judul" placeholder="Judul Infromasi">
+                                    <label>Nama Fasilitas</label>
+                                    <input type="text" name="fasilitas" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Longitude</label>
+                                    <input type="text" name="long" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Latitude</label>
+                                    <input type="text" name="lat" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Harga Tiket</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" name="harga" class="form-control">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>Isi Infromasi</label>
-                                    <textarea name="isi" class="form-control" rows="10"></textarea>
-                                    <input type="hidden" name="tanggal" value="<?= date('d/m/Y'); ?>">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control">
+                                        <option hidden>-Pilih Status-</option>
+                                        <option value="Tersedia">Tersedia</option>
+                                        <option value="Sedang Diperbaiki">Sedang Diperbaiki</option>
+                                    </select>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label>Gambar</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile" name="gambar">
-                                        <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                    </div>
-                                </div> -->
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Informasi</label>
+                                    <textarea name="info" class="form-control" cols="30" rows="10"></textarea>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -129,7 +131,7 @@ include 'controller/post_info.php';
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Keluar</button>
-                        <button type="submit" name="simpan_informasi" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                        <button type="submit" name="simpan_fasilitas" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
                     </div>
                 </form>
             </div>

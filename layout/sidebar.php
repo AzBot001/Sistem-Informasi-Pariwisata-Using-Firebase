@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= $base_url ?>lapak" class="nav-link">
+            <a href="index.php?hal=map" class="nav-link">
               <i class="nav-icon fas fa-map-marked-alt"></i>
               <p>
                 Fasilitas / Peta
