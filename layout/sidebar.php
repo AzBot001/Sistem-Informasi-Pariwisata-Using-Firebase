@@ -45,12 +45,12 @@
             <a href="<?= $base_url ?>lapak" class="nav-link">
               <i class="nav-icon fas fa-map-marked-alt"></i>
               <p>
-                Map
+                Fasilitas / Peta
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= $base_url ?>lapak" class="nav-link">
+            <a href="index.php?hal=ulasan" class="nav-link">
               <i class="nav-icon fas fa-address-card"></i>
               <p>
                 Ulasan

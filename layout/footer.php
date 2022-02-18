@@ -32,29 +32,30 @@
 <script src="<?= $base_url ?>public/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?= $base_url ?>public/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= $base_url ?>public/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDxo_E-nkaB_oCawF4RxbR0SyWVGFMYDfM",
-    authDomain: "belajar-24497.firebaseapp.com",
-    databaseURL: "https://belajar-24497-default-rtdb.firebaseio.com",
-    projectId: "belajar-24497",
-    storageBucket: "belajar-24497.appspot.com",
-    messagingSenderId: "622061828312",
-    appId: "1:622061828312:web:1062dca439c5c66ac03fad",
-    measurementId: "G-K16THF6V4B"
-  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAQe87SVkT960bcU2TWeoNV8Rjivjkqhn0",
+  authDomain: "test-f2700.firebaseapp.com",
+  databaseURL: "https://test-f2700-default-rtdb.firebaseio.com",
+  projectId: "test-f2700",
+  storageBucket: "test-f2700.appspot.com",
+  messagingSenderId: "812231346515",
+  appId: "1:812231346515:web:f6ac4c94faf364b6d7b9a6",
+  measurementId: "G-JMGKZ46D3E"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 </script>
 <script>
   

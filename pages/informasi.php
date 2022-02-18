@@ -71,6 +71,7 @@ include 'controller/post_info.php';
                             <tr>
                                 <th>#</th>
                                 <th>Judul Informasi</th>
+                                <th>Tanggal</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -108,7 +109,7 @@ include 'controller/post_info.php';
                                 <div class="form-group">
                                     <label>Isi Infromasi</label>
                                     <textarea name="isi" class="form-control" rows="10"></textarea>
-                                    <input type="hidden" name="tanggal" value="<?= date('Y-m-d'); ?>">
+                                    <input type="hidden" name="tanggal" value="<?= date('d/m/Y'); ?>">
                                 </div>
                                 <!-- <div class="form-group">
                                     <label>Gambar</label>
@@ -117,6 +118,12 @@ include 'controller/post_info.php';
                                         <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                     </div>
                                 </div> -->
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="">Gambar</label>
+                                    <input type="file" name="gambar" class="form-control">
+                                </div>
                             </div>
                         </div>
                     </div>

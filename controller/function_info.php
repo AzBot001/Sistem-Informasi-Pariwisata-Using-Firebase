@@ -10,6 +10,7 @@ function tampil_informasi($database)
         <tr>
             <td><?= $nomor++ ?></td>
             <td><?= $row['judul'] ?></td>
+            <td><?= $row['tanggal']?></td>
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $key ?>">
@@ -41,15 +42,17 @@ function tampil_informasi($database)
                                     <div class="form-group">
                                         <label>Isi Infromasi</label>
                                         <textarea name="isi" class="form-control" rows="10"><?= $row['isi'] ?></textarea>
-                                        <input type="hidden" name="tanggal" value="<?= date('Y-m-d'); ?>">
+                                        <input type="hidden" name="tanggal" value="<?= date('d/m/Y'); ?>">
                                     </div>
-                                    <!-- <div class="form-group">
-                                    <label>Gambar</label>
+                                    <div class="form-group">
+                                    <label>Gambar</label><br>
+                                    <img src="<?= $row['gambar'] ?>" width="25%" alt=""><br><br>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="customFile" name="gambar">
+                                        <input type="hidden" class="form-control" name="gambar_s" value="<?= $row['gambar'] ?>">
                                         <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                     </div>
-                                </div> -->
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +79,10 @@ function tampil_informasi($database)
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <h3 class="text-center"><?= $row['judul'] ?></h3>
+                                <h2 class="text-center"><?= $row['judul'] ?></h2>
+                                <div class="text-center">
+                                <img src="<?= $row['gambar'] ?>" width="50%" alt="">
+                                </div>
                                 <div class="col-12 text-justify"><?= $row['isi'] ?></div>
                             </div>
                         </div>
@@ -92,6 +98,5 @@ function tampil_informasi($database)
 <?php
     }
 }
-
 
 ?>

@@ -1,4 +1,6 @@
 <?php
+
+error_reporting(0);
 include('dbcon.php');
 include 'base_url.php';
 
@@ -19,6 +21,10 @@ if(empty($_GET['hal'])){
         $title = 'Infromasi';
         $icon = 'fas fa-info-circle';
         include 'pages/informasi.php';
+    }else if(isset($_GET['hal']) && $_GET['hal'] == 'ulasan'){
+        $title = 'Ulasan';
+        $icon = 'fas';
+        include 'pages/ulasan.php';
     }
 
     include 'layout/footer.php';

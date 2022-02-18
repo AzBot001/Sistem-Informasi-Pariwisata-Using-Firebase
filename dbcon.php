@@ -6,9 +6,8 @@ use Kreait\Firebase\ServiceAccount;
 
 $factory = (new Factory)
 ->withServiceAccount('belajar-24497-firebase-adminsdk-csy7f-1458280b9e.json')
-->withDatabaseUri('https://belajar-24497-default-rtdb.firebaseio.com/');
+->withDatabaseUri('https://test-f2700-default-rtdb.firebaseio.com/');
 $database = $factory->createDatabase();
-
 
 
 ?>
