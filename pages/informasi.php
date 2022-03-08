@@ -1,6 +1,7 @@
 <?php
 include 'controller/post_info.php';
 ?>
+
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">

@@ -16,4 +16,16 @@ if(isset($_POST['balas'])){
     flash("msg_balas","Balasan Berhasil Diinput");
 }
 
+if(isset($_POST['edit_balas'])){
+    $balasan = $_POST['balasan'];
+    $id = $_POST['id'];
+    $postData = [
+        'balasan'=>$balasan,
+    ];
+    
+    $ref_table = "rating/".$id;
+    $postRef = $database->getReference($ref_table)->update($postData);
+    flash("msg_editBalas","Balasan Berhasil Diedit");
+}
+
 ?>

@@ -64,9 +64,7 @@ include 'controller/post_map.php';
                     <?php
                     }
                     ?>
-                    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-xl">
-                        <i class="fas fa-plus-circle"></i> Tambah Fasilitas
-                    </button><br><br>
+                   
                     <table class="table" id="dataTable">
                         <thead class="thead-light">
                             <tr>
@@ -79,7 +77,7 @@ include 'controller/post_map.php';
                             </tr>
                         </thead>
                         <tbody>
-                            <?php tampil_map($database); ?>
+                            <?php tampil_map_staff($database); ?>
                         </tbody>
                     </table>
 

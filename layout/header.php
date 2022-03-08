@@ -26,6 +26,9 @@
     .sidebar-head {
       background-color: #FBB62B;
     }
+    .ungu {
+      background-color: #c337fa;
+    }
 
     .overlay-dark {
       background-color: rgba(black, 0.4);
@@ -36,6 +39,7 @@
     .navbar-blue {
       background-color: #1584A2;
     }
+    
 
     .bg-login {
       background-image: url('public/dist/img/bg1.png');
@@ -51,5 +55,9 @@
       background-color: #3ebdc6 !important;
       border-color: #3ebdc6 !important;
     }
+    .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #3ebdc6;
+    color: #fff;
+}
   </style>
 </head>

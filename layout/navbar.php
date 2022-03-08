@@ -18,7 +18,7 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link text-white" data-toggle="dropdown" href="#">
-            <i class="far fa-user"></i> Admin
+            <i class="far fa-user"></i> <?= $_SESSION['nama'] ?>
           </a>
           <div class="dropdown-menu">
             <a href="<?= $base_url ?>app/logout.php" class="dropdown-item">

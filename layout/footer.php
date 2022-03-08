@@ -34,31 +34,34 @@
 <script src="<?= $base_url ?>public/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <script type="module">
- // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+  // Import the functions you need from the SDKs you need
+  import {
+    initializeApp
+  } from "firebase/app";
+  import {
+    getAnalytics
+  } from "firebase/analytics";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAQe87SVkT960bcU2TWeoNV8Rjivjkqhn0",
-  authDomain: "test-f2700.firebaseapp.com",
-  databaseURL: "https://test-f2700-default-rtdb.firebaseio.com",
-  projectId: "test-f2700",
-  storageBucket: "test-f2700.appspot.com",
-  messagingSenderId: "812231346515",
-  appId: "1:812231346515:web:f6ac4c94faf364b6d7b9a6",
-  measurementId: "G-JMGKZ46D3E"
-};
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQe87SVkT960bcU2TWeoNV8Rjivjkqhn0",
+    authDomain: "test-f2700.firebaseapp.com",
+    databaseURL: "https://test-f2700-default-rtdb.firebaseio.com",
+    projectId: "test-f2700",
+    storageBucket: "test-f2700.appspot.com",
+    messagingSenderId: "812231346515",
+    appId: "1:812231346515:web:f6ac4c94faf364b6d7b9a6",
+    measurementId: "G-JMGKZ46D3E"
+  };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
 <script>
-  
   $(document).ready(function() {
     setTimeout(function() {
       $(".alert").fadeTo(500, 0).slideUp(500, function() {
@@ -67,12 +70,46 @@ const analytics = getAnalytics(app);
     }, 2000);
   });
 
- 
 
-  $(document).ready( function () {
+
+  $(document).ready(function() {
     $('#dataTable').DataTable();
-} );
+  });
+
 </script>
+
+<?php
+
+$ref_table = 'User';
+$total_count = $database->getReference($ref_table)->getSnapshot()->numChildren();
+$jumlah = $total_count;
+
+for($i = 1; $i <= $jumlah; $i++){
+
+  ?>
+
+  <script>
+    
+  $(document).ready(function() {
+    $('#edit<?= $i; ?>').hide();
+  });
+
+  $("#show<?= $i; ?>").click(function() {
+    $("#edit<?= $i; ?>").show();
+    $("#noedit<?= $i; ?>").hide();
+  });
+
+  $("#hide<?= $i; ?>").click(function() {
+    $("#noedit<?= $i; ?>").show();
+    $("#edit<?= $i; ?>").hide();
+  });
+  </script>
+
+  <?php
+
+}
+
+?>
 
 </body>
 
