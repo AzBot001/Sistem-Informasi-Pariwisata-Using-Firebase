@@ -123,12 +123,7 @@ include 'controller/post_map.php';
                             </div>
                             <div class="col-12">
                                 <label>Harga Tiket</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                    </div>
-                                    <input type="text" name="harga" class="form-control">
-                                </div>
+                                <input type="text" name="harga" class="form-control" id="">
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -136,7 +131,7 @@ include 'controller/post_map.php';
                                     <select name="status" class="form-control">
                                         <option hidden>-Pilih Status-</option>
                                         <option value="Tersedia">Tersedia</option>
-                                        <option value="Sedang Diperbaiki">Sedang Diperbaiki</option>
+                                        <option value="Belum Tersedia">Belum Tersedia</option>
                                     </select>
                                 </div>
                             </div>

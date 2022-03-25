@@ -39,6 +39,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['uid'] = $cari_id;
                     $_SESSION['nama'] = $nama_db;
                     $_SESSION['type_user'] = "admin";
+                    $_SESSION['pass'] = $pass_db;
                     ?>
                     <script>
                         document.location.href = '<?= $base_url ?>index.php?hal=beranda_admin';
@@ -49,6 +50,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['uid'] = $cari_id;
                     $_SESSION['nama'] = $nama_db;
                     $_SESSION['type_user'] = "staf";
+                    $_SESSION['pass'] = $pass_db;
                     ?>
                     <script>
                         document.location.href = '<?= $base_url ?>index.php?hal=beranda_staff';

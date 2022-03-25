@@ -32,6 +32,10 @@ if (isset($_GET['hal']) && $_GET['hal'] == 'beranda_staff') {
     $title = 'Map';
     $icon = 'fas';
     include 'pages/map_staff.php';
+}else if(isset($_GET['hal']) && $_GET['hal'] == 'pengguna_staff'){
+    $title = 'Pengguna';
+    $icon = 'fas';
+    include 'pages/pengguna_staff.php';
 } else {
     ?>
         <script>

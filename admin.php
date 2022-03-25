@@ -32,6 +32,10 @@ if (isset($_GET['hal']) && $_GET['hal'] == 'beranda_admin') {
     $title = 'Map';
     $icon = 'fas';
     include 'pages/map.php';
+}  else if (isset($_GET['hal']) && $_GET['hal'] == 'pengguna') {
+    $title = 'Pengguna';
+    $icon = 'fas';
+    include 'pages/pengguna.php';
 } else {
 ?>
     <script>

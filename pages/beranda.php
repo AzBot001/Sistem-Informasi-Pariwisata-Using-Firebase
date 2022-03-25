@@ -147,7 +147,7 @@
                                 echo $total_count;
                                 ?>
                             </h3>
-                            <p>Total Pengulas</p>
+                            <p>Total Ulasan</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-address-card"></i>

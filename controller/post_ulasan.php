@@ -28,4 +28,11 @@ if(isset($_POST['edit_balas'])){
     flash("msg_editBalas","Balasan Berhasil Diedit");
 }
 
+if(isset($_POST['hapus_ulasan'])){
+    $id = $_POST['id'];
+    $ref_table = 'rating/'.$id;
+    $delete_ref = $database->getReference($ref_table)->remove();
+    flash("msg_hapus_ulasan","Ulasan Berhasil Dihapus");
+}
+
 ?>

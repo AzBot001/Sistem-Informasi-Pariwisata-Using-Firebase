@@ -104,6 +104,14 @@ for($i = 1; $i <= $jumlah; $i++){
     $("#edit<?= $i; ?>").hide();
   });
   </script>
+  <script>
+
+    function passLama(){
+         document.getElementById("passL").type = 'text' ;
+    
+    }
+
+  </script>
 
   <?php
 

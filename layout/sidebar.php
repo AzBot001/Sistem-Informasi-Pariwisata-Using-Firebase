@@ -60,6 +60,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= $_SESSION['type_user'] == 'admin' ? 'index.php?hal=pengguna' : 'index.php?hal=pengguna_staff' ?>" class="nav-link <?php if($get == 'pengguna' || $get == 'pengguna_staff'){ echo 'active';} ?>">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pengguna
+              </p>
+            </a>
+          </li>
         </ul>
 
       </nav>

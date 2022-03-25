@@ -50,6 +50,13 @@
       padding-bottom: 0px;
     }
 
+    .profile-user-img {
+    border: 3px solid #adb5bd;
+    margin: 0 auto;
+    padding: 3px;
+    width: 205px;
+}
+
     .pagination>li.active>a,
     .pagination>li.active>span {
       background-color: #3ebdc6 !important;

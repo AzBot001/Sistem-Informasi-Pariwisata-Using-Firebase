@@ -7,8 +7,8 @@ include('flash_message.php');
 if (isset($_POST['simpan_fasilitas'])) {
 
     $fasilitas = $_POST['fasilitas'];
-    $long = $_POST['long'];
-    $lat = $_POST['lat'];
+    $long = floatval($_POST['long']);
+    $lat = floatval($_POST['lat']);
     $harga = $_POST['harga'];
     $status = $_POST['status'];
     $info = $_POST['info'];
@@ -20,7 +20,8 @@ if (isset($_POST['simpan_fasilitas'])) {
 
     $postData = [
         'fasilitas' => $fasilitas,
-        'long_lat' => $long.','.$lat,
+        'longitude' => $long,
+        'latitude' => $lat,
         'harga' => $harga,
         'status' => $status,
         'info' => $info,
@@ -35,7 +36,8 @@ if (isset($_POST['simpan_fasilitas'])) {
 if(isset($_POST['edit_fasilitas'])){
     $id = $_POST['id'];
     $fasilitas = $_POST['fasilitas'];
-    $long_lat = $_POST['long_lat'];
+    $long = floatval($_POST['long']);
+    $lat = floatval($_POST['lat']);
     $harga = $_POST['harga'];
     $status = $_POST['status'];
     $info = $_POST['info'];
@@ -49,7 +51,8 @@ if(isset($_POST['edit_fasilitas'])){
 
     $updateData = [
         'fasilitas' => $fasilitas,
-        'long_lat' => $long_lat,
+        'longitude' => $long,
+        'latitude' => $lat,
         'harga' => $harga,
         'status' => $status,
         'info' => $info,

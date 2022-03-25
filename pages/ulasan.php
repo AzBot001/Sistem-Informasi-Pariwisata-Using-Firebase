@@ -23,7 +23,7 @@ include 'controller/post_ulasan.php';
             <div class="card card-default color-palette-box">
                 <div class="card-header">
                     <h3 class="card-title">
-                        Daftar User
+                        Daftar Ulasan
                     </h3>
                 </div>
                 <div class="card-body">
@@ -51,6 +51,18 @@ include 'controller/post_ulasan.php';
                     <?php
                     }
                     ?>
+                    <?php
+                    if (isset($_SESSION['msg_hapus_ulasan'])) {
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <span class="fas fa-check fe-16 mr-2"></span> <?= flash('msg_hapus_ulasan'); ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <table class="table" id="dataTable">
                         <thead class="thead-light">
                             <tr>
@@ -58,6 +70,7 @@ include 'controller/post_ulasan.php';
                                 <th>Nama Pengunjung</th>
                                 <th>Rating</th>
                                 <th>Tanggal</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

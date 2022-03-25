@@ -58,6 +58,7 @@ include 'controller/post_ulasan.php';
                                 <th>Nama Pengunjung</th>
                                 <th>Rating</th>
                                 <th>Tanggal</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

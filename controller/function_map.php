@@ -10,8 +10,8 @@ function tampil_map($database)
         <tr>
             <td><?= $nomor++ ?></td>
             <td><?= $row['fasilitas'] ?></td>
-            <td><?= $row['long_lat'] ?></td>
-            <td>Rp. <?= number_format($row['harga']) ?></td>
+            <td><?= $row['longitude']." / ".$row['latitude'] ?></td>
+            <td>Rp. <?= $row['harga'] ?></td>
             <td>
                 <?php
                 if ($row['status'] == 'Tersedia') {
@@ -20,7 +20,7 @@ function tampil_map($database)
                 <?php
                 } else {
                 ?>
-                    <div class="badge badge-pill badge-danger">Sedang Diperbaiki</div>
+                    <div class="badge badge-pill badge-danger">Belum Tersedia</div>
                 <?php
                 }
                 ?>
@@ -67,7 +67,7 @@ function tampil_map($database)
                                         <h6>:</h6>
                                     </div>
                                     <div class="col-5">
-                                        <h6>Rp. <?= number_format($row['harga']) ?></h6>
+                                        <h6>Rp. <?= $row['harga'] ?></h6>
                                     </div>
                                 </div>
                                 <div class="row p-2">
@@ -78,7 +78,7 @@ function tampil_map($database)
                                         <h6>:</h6>
                                     </div>
                                     <div class="col-5">
-                                        <h6> <?= $row['long_lat'] ?></h6>
+                                        <h6> <?= $row['longitude']." , ".$row['latitude'] ?></h6>
                                     </div>
                                 </div>
                                 <div class="row p-2 bg-light">
@@ -97,7 +97,7 @@ function tampil_map($database)
                                             <?php
                                             } else {
                                             ?>
-                                                <div class="badge badge-pill badge-danger">Sedang Diperbaiki</div>
+                                                <div class="badge badge-pill badge-danger">Belum Tersedia</div>
                                             <?php
                                             }
                                             ?>
@@ -146,22 +146,24 @@ function tampil_map($database)
                                     <input type="text" name="fasilitas" value="<?= $row['fasilitas'] ?>" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="form-group">
-                                    <label>Longitude , Latitude</label>
-                                    <input type="text" name="long_lat" value="<?= $row['long_lat'] ?>" class="form-control">
-                                    <small class="text-danger">*Pisahkan dengan tanda koma (,)</small>
+                                    <label>Longitude</label>
+                                    <input type="text" name="long" value="<?= $row['longitude'] ?>" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Latitude</label>
+                                    <input type="text" name="lat" value="<?= $row['latitude'] ?>" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <label>Harga Tiket</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                    </div>
+                                
                                     <input type="text" value="<?= $row['harga'] ?>" name="harga" class="form-control">
-                                </div>
+                               
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -169,7 +171,7 @@ function tampil_map($database)
                                     <select name="status" class="form-control">
                                         <option hidden><?= $row['status'] ?></option>
                                         <option value="Tersedia">Tersedia</option>
-                                        <option value="Sedang Diperbaiki">Sedang Diperbaiki</option>
+                                        <option value="Belum Tersedia">Belum Tersedia</option>
                                     </select>
                                 </div>
                             </div>
@@ -203,7 +205,6 @@ function tampil_map($database)
 <?php
     }
 }
-
 function tampil_map_staff($database)
 {
 
@@ -214,8 +215,8 @@ function tampil_map_staff($database)
         <tr>
             <td><?= $nomor++ ?></td>
             <td><?= $row['fasilitas'] ?></td>
-            <td><?= $row['long_lat'] ?></td>
-            <td>Rp. <?= number_format($row['harga']) ?></td>
+            <td><?= $row['longitude']." / ".$row['latitude'] ?></td>
+            <td>Rp. <?= $row['harga']; ?></td>
             <td>
                 <?php
                 if ($row['status'] == 'Tersedia') {
@@ -224,7 +225,7 @@ function tampil_map_staff($database)
                 <?php
                 } else {
                 ?>
-                    <div class="badge badge-pill badge-danger">Sedang Diperbaiki</div>
+                    <div class="badge badge-pill badge-danger">Belum Tersedia</div>
                 <?php
                 }
                 ?>
@@ -233,7 +234,7 @@ function tampil_map_staff($database)
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $key ?>">
                     <button type="button" data-toggle="modal" data-target="#modal-detail<?= $key ?>" class="btn btn-xs btn-success"><i class="fas fa-search"></i></button>
-                   
+
                 </form>
             </td>
             <div class="modal fade" data-backdrop="static" id="modal-detail<?= $key ?>">
@@ -281,7 +282,7 @@ function tampil_map_staff($database)
                                         <h6>:</h6>
                                     </div>
                                     <div class="col-5">
-                                        <h6> <?= $row['long_lat'] ?></h6>
+                                        <h6> <?= $row['longitude']." , ".$row['latitude'] ?></h6>
                                     </div>
                                 </div>
                                 <div class="row p-2 bg-light">
@@ -300,7 +301,7 @@ function tampil_map_staff($database)
                                             <?php
                                             } else {
                                             ?>
-                                                <div class="badge badge-pill badge-danger">Sedang Diperbaiki</div>
+                                                <div class="badge badge-pill badge-danger">Belum Tersedia</div>
                                             <?php
                                             }
                                             ?>
@@ -349,11 +350,16 @@ function tampil_map_staff($database)
                                     <input type="text" name="fasilitas" value="<?= $row['fasilitas'] ?>" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="form-group">
-                                    <label>Longitude , Latitude</label>
-                                    <input type="text" name="long_lat" value="<?= $row['long_lat'] ?>" class="form-control">
-                                    <small class="text-danger">*Pisahkan dengan tanda koma (,)</small>
+                                    <label>Longitude</label>
+                                    <input type="text" name="long" value="<?= $row['longitude'] ?>" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Latitude</label>
+                                    <input type="text" name="lat" value="<?= $row['latitude'] ?>" class="form-control">
                                 </div>
                             </div>
 
@@ -372,7 +378,7 @@ function tampil_map_staff($database)
                                     <select name="status" class="form-control">
                                         <option hidden><?= $row['status'] ?></option>
                                         <option value="Tersedia">Tersedia</option>
-                                        <option value="Sedang Diperbaiki">Sedang Diperbaiki</option>
+                                        <option value="Belum Tersedia">Belum Tersedia</option>
                                     </select>
                                 </div>
                             </div>
@@ -406,5 +412,7 @@ function tampil_map_staff($database)
 <?php
     }
 }
+
+
 
 ?>

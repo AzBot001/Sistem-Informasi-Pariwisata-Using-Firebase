@@ -11,7 +11,7 @@ include 'app/aksilogin.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pentadio | Log in</title>
-   
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
@@ -20,7 +20,7 @@ include 'app/aksilogin.php';
     <link rel="stylesheet" href="<?= $base_url ?>public/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 
     <link rel="stylesheet" href="<?= $base_url ?>public/assets/dist/css/adminlte.min.css?v=3.2.0">
-   
+
     <script nonce="e170f098-9bdb-48a7-b89a-c729feb21bdc">
         (function(w, d) {
             ! function(a, e, t, r, z) {
@@ -42,42 +42,44 @@ include 'app/aksilogin.php';
             }(w, d, 0, "script");
         })(window, document);
     </script>
-<style>
-    body{
-        background-image: url('<?= $base_url ?>public/assets/dist/img/bg.jpg') !important;
-    }
-</style>
+    <style>
+        body {
+            background-image: url('<?= $base_url ?>public/assets/dist/img/bg.jpg') !important;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
             <div class="row">
-               
+
                 <div class="col-6">
-                <img src="<?= $base_url ?>public/assets/image/logo/pesona.png" width="180px" alt="">
+                    <img src="<?= $base_url ?>public/assets/image/logo/pesona.png" width="180px" alt="">
                 </div>
                 <div class="col-6">
-                <img src="<?= $base_url ?>public/assets/image/logo/kabgor.png" width="80px" alt="">
+                    <img src="<?= $base_url ?>public/assets/image/logo/kabgor.png" width="80px" alt="">
                 </div>
-           
+
             </div>
             <div class="row mt-4">
-            <div class="col-12">
-            <img src="<?= $base_url ?>public/assets/image/logo/blue.png" width="220px" alt="">
+
             </div>
-            </div>
-           
+
         </div>
 
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Login User</p>
+
+                <div class="col-12 mb-4 text-center">
+                    <img src="<?= $base_url ?>public/assets/image/logo/logo_baru.png" width="180px" alt="">
+                </div>
+
                 <form action="" method="post">
                     <div class="input-group mb-3">
                         <input type="text" id="username" name="username" class="form-control" placeholder="Username">
-                       
-                      
+
+
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -93,11 +95,11 @@ include 'app/aksilogin.php';
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                       <select name="level" class="form-control" id="">
-                           <option hidden value="0">-Pilih Level-</option>
-                           <option value="Staf Dinas">Staff Dinas</option>
-                           <option value="Admin">Administrator</option>
-                       </select>
+                        <select name="level" class="form-control" id="">
+                            <option hidden value="0">-Pilih Level-</option>
+                            <option value="Staf Dinas">Staff Dinas</option>
+                            <option value="Admin">Administrator</option>
+                        </select>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-male"></span>
