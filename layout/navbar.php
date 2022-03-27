@@ -21,9 +21,9 @@
             <i class="far fa-user"></i> <?= $_SESSION['nama'] ?>
           </a>
           <div class="dropdown-menu">
-            <!-- <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
               <i class="fas fa-cog"></i> Pengaturan Akun
-            </button> -->
+            </button>
             <a href="<?= $base_url ?>app/logout.php" class="dropdown-item">
               <i class="fas fa-sign-out-alt"></i> Logout
             </a>
